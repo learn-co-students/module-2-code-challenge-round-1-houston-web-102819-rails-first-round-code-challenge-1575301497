@@ -1,0 +1,25 @@
+<h1> Create Heroine <h1>
+
+<form method="POST" action="/heroines">
+
+<label> Name </label>
+<input name="name" type="text">
+<br>
+
+<label> Super Name</label>
+<input name="super_name" type="text">
+<br>
+
+<label> Super Power </label>
+
+<select name="super_power">
+<%@powers.all.each do |power| %>
+<option value="<%=power.id%>"><%=power.name%> </option>
+<%end%>
+</select>
+
+<input type="submit">
+
+
+
+</form>
