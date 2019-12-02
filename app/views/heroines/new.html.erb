@@ -1,0 +1,17 @@
+<h1>Create Heroine:</h1>
+<%=form_with({model: @heroine}) do |f|%>
+    <div>
+        <label>Name:</label> <br \>
+        <%=f.text_field(:name)%>
+    </div>
+
+    <div>
+        <label>Super Name:</label> <br \>
+        <%=f.text_field(:super_name)%>
+    </div>
+
+    <div>
+        <%=f.collection_select(:power_id, @powers, :id, :name)%>
+        <%=f.submit%>
+    </div>
+<%end%>
