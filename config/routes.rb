@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :powers, only: [:index]
-  resources :heroines, only: [:index]  
+
+  get('/heroines/error', { to: 'heroines#error'})
+  resources(:powers)
+  resources(:heroines) 
+  
 end
