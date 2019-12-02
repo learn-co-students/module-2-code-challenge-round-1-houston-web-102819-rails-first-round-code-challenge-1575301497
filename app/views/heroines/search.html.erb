@@ -7,10 +7,10 @@
     <%= submit_tag("Search") %>
   <% end %>
 
-  <% @heroines.each do |heroine| %>
-    <li>
-      <a href=<%="#{heroines_path}/#{heroine.id}"%>><%=heroine.name%></a>
-    </li>
-    <br>
-  <% end %>
+    <%@found_items.each do |item|%>
+        <li>
+            <a href=<%="#{heroines_path}/#{item.id}"%>><%=item.name%></a>
+        </li>
+        <br>
+    <%end%>
 </ul>

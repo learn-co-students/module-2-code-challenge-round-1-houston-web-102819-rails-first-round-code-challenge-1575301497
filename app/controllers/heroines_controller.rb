@@ -19,6 +19,16 @@ class HeroinesController < ApplicationController
     end
   end
 
+  def search
+    @search = params[:search]
+    @found_items = []
+    Heroine.all.each do |heroine|
+      if params[:search] == heroine.power.name
+        @found_items << heroine
+      end
+    end
+  end
+
   #can't get this to work :(
   def filtered_params
     params.permit({
