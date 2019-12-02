@@ -2,6 +2,7 @@ class HeroinesController < ApplicationController
 
   def index
     @heroines = Heroine.all
+    @powers = Power.all
   end
 
   def show
@@ -29,24 +30,6 @@ class HeroinesController < ApplicationController
   end
 
   def error
-  end
-
-  def edit
-    @heroine = Heroine.find_by(id: params[:id])
-  end
-
-  def update
-    @heroine = Heroine.find_by(id: params[:id])
-    @heroine.update({
-      name: params[:heroine][:name],
-      super_name: params[:heroine][:super_name],
-      power_id: params[:heroine][:power_id],
-    })
-  end
-
-  def destroy
-    @heroine = Heroine.find_by(id: params[:id])
-    @heroine.destroy
   end
   
 end

@@ -1,6 +1,5 @@
 <h2>All Heroines</h2>
 
-
   <% @heroines.each do |heroine| %>
     <div>
       <%= link_to(heroine.super_name, heroine_path(heroine.id)) %>
